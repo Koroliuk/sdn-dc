@@ -1,0 +1,22 @@
+networkBandwidth:
+  default:
+    minRate: 700000
+    maxRate: 800000
+
+  timeBasedRules:
+    - description: 'Rule 1 - Night time reduced bandwidth'
+      daysOfWeek: [Tuesday, Wednesday, Thursday, Friday]
+      timeRange:
+        start: '22:00'
+        end: '06:00'
+      bandwidth:
+        minRate: 100000
+        maxRate: 500000
+
+    - description: 'Rule 2 - Weekend increased bandwidth'
+      daysOfWeek: [Saturday, Sunday]
+      timeRange:
+        start: '08:00'
+        end: '23:59'
+      bandwidth:
+        maxRate: 200000
